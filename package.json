@@ -1,0 +1,12 @@
+{
+  "name": "fee-wheel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pump.fun creator-fee wheel: every 5 minutes one eligible holder wins the fee pot",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "@solana/web3.js": "^1.98.0",
+    "bs58": "^6.0.0"
+  }
+}

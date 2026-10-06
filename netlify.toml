@@ -1,0 +1,16 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/state"
+  to = "/.netlify/functions/state"
+  status = 200
+
+[[redirects]]
+  from = "/api/round/*"
+  to = "/.netlify/functions/round?id=:splat"
+  status = 200
