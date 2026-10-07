@@ -1,13 +1,21 @@
+# Everything lives in this one folder: the website (index.html) and the 4 functions (*.mjs).
+# The .mjs files are pre-built: all code and libraries are inside them, nothing to install.
 [build]
-  publish = "public"
-  functions = "netlify/functions"
+  publish = "."
+  functions = "."
 
-[functions]
-  node_bundler = "esbuild"
+# runs every minute (holder snapshot; spins + pays on every 5-minute mark)
+[functions."tick"]
+  schedule = "* * * * *"
 
 [[redirects]]
   from = "/api/state"
   to = "/.netlify/functions/state"
+  status = 200
+
+[[redirects]]
+  from = "/api/debug"
+  to = "/.netlify/functions/debug"
   status = 200
 
 [[redirects]]
